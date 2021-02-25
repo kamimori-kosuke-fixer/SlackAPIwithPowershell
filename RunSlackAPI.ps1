@@ -1,13 +1,14 @@
+#urlやbodyはSlack API公式を参照して変更してください。
 $token = "xxxx-"
 $channel = ""
-$api_url = "https://slack.com/api/conversations.history"
+$baseUrl = "https://slack.com/api";
+$url = "${baseUrl}/conversations.history"
 $method = "GET"
 $UNIX_EPOCH = Get-Date("1970/1/1 0:0:0 GMT")
 
-
 $response = `
 (Invoke-RestMethod `
-    -Uri $api_url `
+    -Uri $url `
     -Method $method `
     -Body @{
         token="$Token";
